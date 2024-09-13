@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agendar Vacinação</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/farmacia-icon.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    
+    <body>
+        
+        <div id="intro">
+            
+            <h1><a href="index.html" target="_self"><img src="img/logo.png" alt="Agendar Vacinacao"></a></h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html" target="_self">Início</a></li>
+                    <li><a href="utente.html" target="_self">Zona de Utente</a></li>
+                    <li><a href="gestao.html" target="_self">Área Reservada</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div id="content">
+            
+            <h3>Farmácias com Vacinação da Gripe</h3>
+            <button onclick="listarFarmaciasGripe()">Listar </button> <button onclick="limparDiv('listaFarmaciasGripe')">Limpar dados</button>
+            <div class="divs_resultados" id="listaFarmaciasGripe"></div>
+
+            <h3>Farmácias com Vacinação de COVID-19</h3>
+            <button onclick="listarFarmaciasCovid()">Listar </button> <button onclick="limparDiv('listaFarmaciasCovid')">Limpar dados</button>
+            <div class="divs_resultados" id="listaFarmaciasCovid"></div>
+
+
+            <h3>Adicionar Nova Farmácia</h3>
+
+            <label for="idFarmacia">ID da Farmácia:</label>
+            <input type="text" id="idFarmacia" required>
+
+            <label for="nomeFarmacia">Nome da Farmácia:</label>
+            <input type="text" id="nomeFarmacia" required>
+
+            <label for="localidadeFarmacia">Localidade da Farmácia:</label>
+            <input type="text" id="localidadeFarmacia" required>
+
+            <label for="gripe">Oferece Vacinação da Gripe:</label>
+            <input type="checkbox" id="gripe">
+
+            <label for="covid">Oferece Vacinação de COVID-19:</label>
+            <input type="checkbox" id="covid">
+            <button type="button" onclick="adicionarFarmacia()">Adicionar Farmácia</button>
+
+        </div>
+        
+        <div id="rodape">
+            
+            <p id="copyright">All content copyright &copy; Alexandre Costa nº 48039.</p>
+            <p>l48039@alunos.uevora.pt</p>
+            <p><a href="https://www.farmaciasportuguesas.pt/">Farmácias Portuguesas</a></p>
+
+        </div>
+
+        <script src="scripts/scriptsgestao.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

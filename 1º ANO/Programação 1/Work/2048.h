@@ -1,0 +1,12 @@
+int InstrucoesDoJogo_TamanhoDaGrelha();
+void Inicia_Grelha(int sz, int grelha[sz][sz]);
+int baixo(int sz, int grelha[sz][sz]);
+int cima(int sz, int grelha[sz][sz]);
+int direita(int sz, int grelha[sz][sz]);
+int esquerda(int sz, int grelha[sz][sz]);
+void Mostrar(int sz,int grelha[sz][sz]);
+int verifica_espacos_vazios(int sz, int grelha[sz][sz]);
+void gera_novo_numero(int sz, int grelha[sz][sz]);
+int Verifica_jogada_possivel(int sz, int grelha[sz][sz]);
+int jogada(int sz,int grelha[sz][sz],char sentido);
+void Fim_do_Jogo(int sz, int grelha[sz][sz], int combinadas);

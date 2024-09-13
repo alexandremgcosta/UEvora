@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agendar Vacinação</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/farmacia-icon.png">
+    </head>
+
+    <body>
+
+        <div id="intro">
+            <h1><a href="index.html" target="_self"><img src="img/logo.png" alt="Agendar Vacinacao"></a></h1>
+
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html" target="_self">Início</a></li>
+                    <li><a href="utente.html" target="_self">Zona de Utente</a></li>
+                    <li><a href="gestao.html" target="_self">Área Reservada</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content">
+
+            <h3>Informações da Farmácia</h3>
+            <label for="FarmaciaID">ID da Farmácia:</label>
+            <input type="text" id="FarmaciaID">
+            <button onclick="obterDadosFarmacia()">Obter dados</button> <button onclick="limparDiv('dadosFarmacia')">Limpar dados</button>
+            <div class="divs_resultados" id="dadosFarmacia"></div>
+
+            <h3>Listar Farmácias</h3>
+            <button onclick="Listar()">Listar</button> <button onclick="limparDiv('listaFarmacia')">Limpar dados</button>
+            <div class="divs_resultados" id="listaFarmacia">
+                <div id="lista"></div>
+                <div id="paginas"></div>
+            </div>
+
+            <h3>Procurar Farmácia</h3>
+            <button onclick="carregarFarmacias()">Procurar</button> <button onclick="limparDiv('dadosDaProcura')">Limpar dados</button>
+            <div class="divs_resultados" id="dadosDaProcura"></div>
+
+            <h3>Procurar Farmácia por vacinas</h3>
+            <input type="radio" id="opcao1" name="opcao" value="gripe">
+            <label for="opcao1">Vacina da gripe</label>
+            <input type="radio" id="opcao2" name="opcao" value="covid-19">
+            <label for="opcao2">Vacina de COVID-19</label>
+            <button onclick="procurarVacinas()">Procurar</button>
+            <button onclick="limparDiv('dadosDasVacinas')">Limpar dados</button>
+            <div class="divs_resultados" id="dadosDasVacinas"></div>
+
+        </div>
+
+        <div id="rodape">
+            
+            <p id="copyright">All content copyright &copy; Alexandre Costa nº 48039.</p>
+            <p>l48039@alunos.uevora.pt</p>
+            <p><a href="https://www.farmaciasportuguesas.pt/">Farmácias Portuguesas</a></p>
+
+        </div>
+
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registar - Running Events</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}" />
+</head>
+<body>
+<div th:replace="template :: header"></div>
+
+<section>
+    <h1>Registo</h1>
+
+    <th:block th:if="${msg}">
+        <p th:text="${msg}"></p>
+    </th:block>
+
+    <form class="forms" action="criarUtilizador" method="post">
+        <div style="margin: 5px;">
+            <label for="primeiroNome">Primeiro Nome:</label>
+            <input type="text" id="primeiroNome" name="primeiroNome" required>
+        </div>
+        <div style="margin: 5px;">
+            <label for="ultimoNome">Último Nome:</label>
+            <input type="text" id="ultimoNome" name="ultimoNome" required>
+        </div>
+        <div style="margin: 5px;">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div style="margin: 5px;">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <button type="submit">Registar</button>
+        </div>
+    </form>
+
+    <p>Já tem uma conta? <a th:href="@{/signin}">Entre aqui</a>.</p>
+</section>
+
+</body>
+</html>

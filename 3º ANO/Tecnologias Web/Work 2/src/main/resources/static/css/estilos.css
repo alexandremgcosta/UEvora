@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #c57d56;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #5d2417;
+    transition: background-color 0.3s;
+}
+
+footer {
+    background-color: #c57d56;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    margin-top: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.footer-section img {
+    max-width: 100px;
+    max-height: 50px;
+    margin: 10px;
+}
+
+section {
+    min-height: 80vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 8px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.logo {
+    margin: 0;
+    font-size: 30px;
+    color: white;
+    padding: 10px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.eventos-content{
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.eventos-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}

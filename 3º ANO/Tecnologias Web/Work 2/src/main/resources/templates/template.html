@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Running Events</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}" />
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Running Events</h1>
+    <nav>
+        <a th:href="@{/}">Página Inicial</a>
+        <a th:href="@{/signin}">Login</a>
+        <a th:href="@{/register}">Registar</a>
+    </nav>
+</header>
+
+<section th:replace="${content}">
+
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Patrocinadores</h4>
+            <a href="https://www.cm-evora.pt/" target="_blank"><img th:src="@{/img/patrocinio_1.png}" alt="cme" class="sponsor-image" /></a>
+            <a href="https://www.lidl.pt/" target="_blank"><img th:src="@{/img/patrocinio_2.png}" alt="lidl" class="sponsor-image" /></a>
+        </div>
+        <div class="footer-section">
+            <h4>Contactos</h4>
+            <p>l48039@alunos.uevora.pt</p>
+        </div>
+        <div class="footer-section">
+            <h4>Sobre a Empresa</h4>
+            <p>Running Events empresa dedicada à gestão de eventos desportivos.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 Running Events - Desenvolvido por Alexandre Costa nº 48039
+    </div>
+</footer>
+
+</body>
+</html>

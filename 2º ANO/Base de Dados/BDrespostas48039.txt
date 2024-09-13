@@ -1,0 +1,264 @@
+Bases de Dados
+2020/2021
+1º Trabalho de Bases de Dados
+Alexandre Costa nº 48039
+
+1.
+* membro(Nome, IdMemb, Pais, Cidade, DataNasc)
+Chave primária: {idmemb}
+Chave Candidata: {}
+
+* amigos(idmemb1, idmemb2)
+Chave primária: {idmemb1, idmemb2}
+Chave Candidata: {}
+
+
+* livro(isbn, titulo)
+Chave primária: {isbn}
+Chave Candidata: {}
+
+
+* gosta(idmemb, isbn)
+Chave primária: {idmemb, isbn}
+Chaves Estrangeiras: {idmemb} referente a membro, {isbn} referente a livro
+Chave Candidata: {}
+
+
+* genero(isbn, género)
+Chave primária: {isbn, género}
+Chave estrangeira: {isbn} referente a livro
+Chave Candidata: {}
+
+
+* autor(coda, nome, pais)
+Chave primária: {coda}
+Chave Candidata: {}
+
+
+* autoria(isbn, coda)
+Chave primária: {isbn, coda}
+Chaves Estrangeiras: {isbn} referente a livro, {coda} referente a autor
+Chave Candidata: {}
+
+
+
+2. 
+CREATE TABLE membro (
+	nome varchar(30),
+	idmemb char(7) primary key,
+	pais varchar(15),
+	cidade varchar(15),
+	datanasc varchar(8)
+);
+
+CREATE TABLE amigos (
+	idmemb1 varchar(7),
+	idmemb2 varchar(7),
+	primary key (idmemb1, idmemb2)
+);
+
+CREATE TABLE livro (
+	isbn char(9) primary key,
+	titulo varchar(30)
+);
+
+CREATE TABLE gosta (
+	idmemb char(7),
+	isbn char(9),
+	foreign key (idmemb) references membro on delete restrict,
+	foreign key (isbn) references livro on delete restrict,
+	primary key (idmemb,isbn)
+);
+
+CREATE TABLE genero (
+	isbn char(9),
+	genero varchar(20),
+	foreign key (isbn) references livro(isbn) on delete restrict,
+	primary key (isbn, genero)
+);
+
+CREATE TABLE autor (
+	coda char(5) primary key,
+	nome varchar(50),
+	pais varchar(15)
+);
+
+CREATE TABLE autoria (
+	isbn char(9),
+	coda char(5),
+	foreign key (isbn) references livro(isbn) on delete restrict,
+	foreign key (coda) references autor(coda) on delete restrict,
+	primary key (isbn,coda)
+);
+
+3.
+a)
+insert into membro values ('Alexandre','0000001','Prtugal', 'Evora', '20031101');
+insert into membro values ('Bruno', '0000002', 'Portugal', 'Evora', '19951001');
+insert into membro values ('Carla', '0000003', 'Portugal', 'Arraiolos', '19950521');
+insert into membro values ('David', '0000004', 'Portugal', 'Evora', '19951001');
+insert into membro values ('Eva', '0000005', 'Portugal', 'Beja', '19960101');
+insert into membro values ('Fernando', '0000006', 'Portugal', 'Beja', '19960310');
+insert into membro values ('Guilherme', '0000007', 'Portugal', 'Beja', '19960510');
+insert into membro values ('Hugo', '0000008', 'Espanha', 'Madrid', '19960604');
+insert into membro values ('Ines', '0000009', 'Portugal', 'Lisboa', '19980710');
+insert into membro values ('Joana', '0000010', 'Portugal', 'Lisboa', '19960718');
+insert into membro values ('Joao', '0000011', 'Portugal', 'Porto', '19970623');
+insert into membro values ('Luis', '0000012', 'Portugal', 'Porto', '19970210');
+insert into membro values ('Manuel', '0000013', 'Portugal', 'Evora', '19951001');
+insert into membro values ('Nadia', '0000014', 'Portugal', 'Faro', '19991118');
+insert into membro values ('Octavio', '0000015', 'Portugal', 'Beja', '19960318');
+insert into membro values ('Paulo', '0000016', 'Portugal', 'Braga', '19990718');
+insert into membro values ('Pedro', '0000017', 'Portugal', 'Faro', '19940820');
+insert into membro values ('Rui', '0000018', 'Portugal', 'Evora', '19960121');
+insert into membro values ('Sonia', '0000019', 'Portugal', 'Beja', '19980728');
+insert into membro values ('Tiago', '0000020', 'Espanha', 'Madrid', '20011010');
+
+b)
+insert into livro values ('000000001', 'Dom Quixote');
+insert into livro values ('000000002', 'Guerra e Paz');
+insert into livro values ('000000003', 'A Montanha Magica');
+insert into livro values ('000000004', 'Cem Anos de Solidao');
+insert into livro values ('000000005', 'Ulisses');
+insert into livro values ('000000006', 'Em Busca do Tempo');
+insert into livro values ('000000007', 'A Divina Comedia');
+insert into livro values ('000000008', 'O Homem Sem Qualidades');
+insert into livro values ('000000009', 'O Processo');
+insert into livro values ('000000010', 'O Som e a Furia');
+
+insert into autor values ('00001', 'Jose Pedro', 'Portugal');
+insert into autor values ('00002', 'Joao Pedro', 'Portugal');
+insert into autor values ('00003', 'Miguel Pereira', 'Portugal');
+insert into autor values ('00004', 'Afonso Henriques', 'Portugal');
+insert into autor values ('00005', 'Jose Manuel', 'Portugal');
+
+insert into autoria values ('000000001', '00001');
+insert into autoria values ('000000001', '00002');
+insert into autoria values ('000000001', '00003');
+insert into autoria values ('000000002', '00001');
+insert into autoria values ('000000002', '00002');
+insert into autoria values ('000000003', '00002');
+insert into autoria values ('000000004', '00002');
+insert into autoria values ('000000005', '00003');
+insert into autoria values ('000000006', '00003');
+insert into autoria values ('000000007', '00004');
+insert into autoria values ('000000007', '00007');
+insert into autoria values ('000000008', '00004');
+insert into autoria values ('000000009', '00005');
+insert into autoria values ('000000010', '00005');
+insert into autoria values ('000000011', '00006');
+
+insert into genero values ('000000001', 'policial');
+insert into genero values ('000000001', 'drama');
+insert into genero values ('000000002', 'policial');
+insert into genero values ('000000002', 'drama');
+insert into genero values ('000000003', 'policial');
+insert into genero values ('000000003', 'romance');
+insert into genero values ('000000004', 'policial');
+insert into genero values ('000000004', 'suspense');
+insert into genero values ('000000005', 'policial');
+insert into genero values ('000000005', 'aventura');
+insert into genero values ('000000006', 'policial');
+insert into genero values ('000000006', 'drama');
+insert into genero values ('000000007', 'policial');
+insert into genero values ('000000007', 'aventura');
+insert into genero values ('000000008', 'policial');
+insert into genero values ('000000008', 'romance');
+insert into genero values ('000000009', 'policial');
+insert into genero values ('000000009', 'suspense');
+insert into genero values ('000000010', 'policial');
+insert into genero values ('000000010', 'drama');
+insert into genero values ('000000010', 'comedia');
+
+c)
+insert into amigos values ('0000001', '0000002');
+insert into amigos values ('0000001', '0000003');
+insert into amigos values ('0000001', '0000004');
+insert into amigos values ('0000001', '0000005');
+insert into amigos values ('0000001', '0000006');
+insert into amigos values ('0000001', '0000007');
+insert into amigos values ('0000001', '0000008');
+insert into amigos values ('0000001', '0000009');
+insert into amigos values ('0000001', '0000010');
+insert into amigos values ('0000001', '0000011');
+insert into amigos values ('0000001', '0000012');
+insert into amigos values ('0000001', '0000013');
+insert into amigos values ('0000001', '0000014');
+insert into amigos values ('0000001', '0000015');
+insert into amigos values ('0000001', '0000016');
+insert into amigos values ('0000001', '0000017');
+insert into amigos values ('0000001', '0000018');
+insert into amigos values ('0000001', '0000019');
+insert into amigos values ('0000001', '0000020');
+
+insert into amigos values ('0000004', '0000006');
+insert into amigos values ('0000004', '0000007');
+insert into amigos values ('0000004', '0000008');
+insert into amigos values ('0000004', '0000009');
+
+
+insert into amigos values ('0000011', '0000018');
+insert into amigos values ('0000011', '0000019');
+insert into amigos values ('0000011', '0000013');
+insert into amigos values ('0000011', '0000014');
+
+
+insert into amigos values ('0000008', '0000002');
+insert into amigos values ('0000008', '0000003');
+insert into amigos values ('0000008', '0000004');
+insert into amigos values ('0000008', '0000005');
+
+insert into amigos values ('0000005', '0000013');
+insert into amigos values ('0000005', '0000012');
+insert into amigos values ('0000005', '0000010');
+
+insert into amigos values ('0000020', '0000008');
+insert into amigos values ('0000020', '0000009');
+insert into amigos values ('0000020', '0000010');
+
+d)
+insert into gosta values ('0000001', '000000001');
+insert into gosta values ('0000002', '000000004');
+insert into gosta values ('0000003', '000000001');
+insert into gosta values ('0000004', '000000005');
+insert into gosta values ('0000005', '000000006');
+insert into gosta values ('0000006', '000000002');
+insert into gosta values ('0000007', '000000009');
+insert into gosta values ('0000008', '000000010');
+insert into gosta values ('0000009', '000000006');
+insert into gosta values ('0000010', '000000002');
+insert into gosta values ('0000011', '000000002');
+insert into gosta values ('0000012', '000000003');
+insert into gosta values ('0000013', '000000004');
+insert into gosta values ('0000014', '000000006');
+insert into gosta values ('0000015', '000000001');
+insert into gosta values ('0000016', '000000002');
+insert into gosta values ('0000017', '000000003');
+insert into gosta values ('0000018', '000000006');
+insert into gosta values ('0000019', '000000008');
+insert into gosta values ('0000020', '000000007');
+
+insert into gosta values ('0000002', '000000001');
+insert into gosta values ('0000002', '000000002');
+
+
+e)
+insert into membro values ('Ze Miguel', 'oleitor', 'Portugal', 'Braga', '20011010');
+
+insert into amigos values ('oleitor', '0000001');
+insert into amigos values ('oleitor', '0000014');
+insert into amigos values ('0000002', 'oleitor');
+
+insert into livro values ('000000011', 'Crime e Castigo');
+
+insert into gosta values ('0000006', '000000011');
+insert into gosta values ('0000007', '000000011');
+insert into gosta values ('0000008', '000000011');
+
+insert into gosta values ('0000018', '000000007');
+insert into gosta values ('0000018', '000000011');
+
+insert into autor values ('00006', 'Agatha Christie', 'Inglaterra');
+insert into autor values ('00007', 'Francisco Jose Viegas', 'Portugal');
+
+

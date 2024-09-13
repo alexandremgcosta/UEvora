@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>48039 - SVG</title>
+    </head>
+
+    <body>
+        <h1>Trabalho de 48039 - SVG</h1>
+        
+        <svg width="456" height="256">
+
+            <defs> 
+                <linearGradient id="Gradient" x1="0" x2="0" y1="0" y2="1"> 
+                    <stop
+                        offset="0%" 
+                        stop-color="#5e5e5e"/>
+                    <stop 
+                        offset="100%" 
+                        stop-color="black"/>
+                </linearGradient>
+
+                <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1"> 
+                    <stop
+                        offset="0%"
+                        stop-color="#454545"/>
+                    <stop
+                        offset="100%" 
+                        stop-color="#black"/>
+                </linearGradient>
+
+                <linearGradient id="Gradient2" x1="0" x2="1" y1="0" y2="0"> 
+                    <stop 
+                        offset="0%" 
+                        stop-color="#5e6669"/>
+                    <stop 
+                        offset="100%" 
+                        stop-color="#212224"/>
+                </linearGradient>
+
+                <g id="ellipse_espada">
+                    <ellipse cx="0" cy="0" rx="6" ry="2" fill="#fdb435" transform="rotate(-15)" />
+                </g>
+
+                <pattern id="arma"
+                    x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+                        <line x1 = "0" y1 = "0" x2 = "8" y2 = "8" stroke = "red" />
+                        <line x1 = "0" y1 = "8" x2 = "8" y2 = "0" stroke = "yellow" />
+                </pattern>
+
+                <g id="passaro">
+                    <path stroke = "black" fill="none" d="M 0, 19 Q 5 12 8 19 Q 15 12 16 19"/>
+                </g>
+
+                <g id="circulosol">
+                    <circle cx="25" cy="25" r="15" fill="yellow"/>
+                </g>
+
+                <g id="arvore">
+                    <rect x="23" y="36" width="5" height="20" fill="brown"/>
+                    <circle cx="25" cy="25" r="12" fill="green"/>
+                </g>
+            </defs>
+
+
+            <g id="fundo">
+                <g id="ceu">
+                    <rect x = "0" y = "0" width = "456" height = "256" stroke="none" fill="#33ccff"/>
+                </g>
+
+                <g id="segundacamadaterra" fill="#009900">
+                    <path d = "
+                        M 0 , 256
+                        L 456, 256
+                        L 456, 130
+                        L 380, 140
+                        L 340, 150
+                        L 300, 160
+                        L 150, 180
+                        L 90, 200
+                        L 0, 210" />
+                </g>
+
+                <g id="primeiracamadaterra" fill="#008000">
+                    <path d = "
+                        M 0 , 256
+                        L 456, 256
+                        L 456, 135
+                        L 380, 145
+                        L 340, 155
+                        L 300, 165
+                        L 150, 185
+                        L 90, 205
+                        L 0, 215" />
+                </g>
+
+                <g id="passaros">
+                    <use xlink:href = "#passaro"
+                    transform="translate(400, 30)"/>
+
+                    <use xlink:href = "#passaro"
+                    transform="translate(390, 22)"/>
+
+                    <use xlink:href = "#passaro"
+                    transform="translate(350, 60)"/>
+
+                    <use xlink:href = "#passaro"
+                    transform="translate(355, 40)"/>
+                </g>
+
+                <g id="sol">
+                    <use xlink:href = "#circulosol"
+                    transform="translate(20, 20)"/>
+                </g>
+
+                <g id="arvores">
+                    <use xlink:href = "#arvore"
+                    transform="translate(30, 160)"/>
+
+                    <use xlink:href = "#arvore"
+                    transform="translate(5, 155)"/>
+
+                    <use xlink:href = "#arvore"
+                    transform="translate(60, 158) scale(0.8 , 0.8)"/>
+                </g>
+
+            </g>
+
+
+
+            <g id="ninja" transform="translate(0,125)">
+
+                <g id="espada">
+                    <rect x="0" y="0" width="50" height="15" transform="translate(82,60) rotate(75)" fill="url(#Gradient2)"/>
+
+                    <rect x="0" y="0" width="20" height="5" rx="2" ry="2" transform="translate(63.7,60) rotate(-15) " fill="#fc9f02"/>
+                
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(76, 67)"/>
+
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(78.2, 74)"/>
+
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(80.2, 81)"/>
+
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(81.8, 88)"/>
+                    
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(83.4, 94.5)"/> 
+                
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(85.2, 100.5)"/>
+
+                    <use xlink:href = "#ellipse_espada"
+                        transform="translate(86.4, 107.5)"/> 
+
+                    <path stroke="black" stroke-opacity="0.6" d="
+                        M 67.8 64.5
+                        L 82.2 60.8"/>
+                </g>
+
+
+                <g id="corpo">
+
+                    <g id="blusa">
+                        <path fill="#6c6c6c" d="
+                            M 60 132
+                            L 196 132
+                            C 207 92.5, 48 92.5, 59 132"/>
+                    </g>
+
+                    <g id="fato">
+                        <path fill="url(#Gradient)" d="
+                            M 65.5 110
+                            Q 68 118 78 132
+                            L 178 132
+                            Q 185 118 186.5 110
+                            Q 126.5 97 65.5 110 Z" />
+
+                        <path fill="#212121" d="
+                            M 67.5 111
+                            Q 70 118 79 132
+                            L 176 132
+                            Q 183 118 184.5 111
+                            Q 126.5 98 67.5 111 Z" />
+                    </g>
+
+                    <g id="colarinho">
+                        <path  fill="#737373" d=" 
+                            M 96 104.5
+                            Q 104.5 118.25 117 132
+                            L 139 132
+                            Q 151.5 118.5 160 104.5
+                            C 113.3 95, 141.6 95, 96 104.5 Z"/>
+
+                        <path fill="#535353" d=" 
+                            M 139 132
+                            Q 152 118.5 160 104.5
+                            Q 135 98 120.6 99
+                            L 127 120
+                            Q 132 127 139 132 Z"/>
+                    </g>
+
+                    <g id="pescoco">
+                        <path fill="#404040" stroke="#404040" d="
+                            M 115 97.5
+                            L 114.5 104
+                            Q 118.4 112 127.5 120
+                            Q 136.25 112 140.5 104
+                            L 140 97.5 Z"/>
+
+                        <path  fill="#1a1a1a" d="
+                            M 115 97.5
+                            L 114.5 101
+                            Q 127.5 105 140.5 101
+                            L 140 97.5"/>
+                    </g>
+
+                    <g id="sombrasblusa">
+                        <path stroke="black" fill="none" stroke-width="0.7" stroke-opacity="0.6" stroke-linecap="round" d="
+                            M 114.2 104
+                            Q 122.6 118 139 131.6
+                            M 139.4 131.3
+                            Q 151.5 118.5 160 104.8"/>
+                    </g>
+                </g>
+
+
+                <g id="cabeca">
+
+                    <ellipse cx="128" cy="53" rx="40" ry="47" fill="#333333" stroke="#595959" id="formadacabeca"/>
+
+                    <g id="cara">
+                        <path fill="#ffcc00" stroke="#595959" stroke-linecap="round" d="
+                            M 96 70
+                            Q 92 38 104 34 
+                            Q 125 25 151 34
+                            Q 164 38 160 70
+                            Q 128 53 96 70"/>
+                    </g>
+
+                    <circle cx="110" cy="56" r="6" fill="black" id="olhoesquerdo"/>
+                    <circle cx="146" cy="56" r="6" fill="black" id="olhodireito"/>
+
+                    <g id="pestanas">
+                        <path fill="none" stroke="#663300" stroke-linecap="round" stroke-width="3" d="
+                            M 103 48
+                            Q 109 45 116 48
+                            M 139 48
+                            Q 145 45 152 48"/>
+                    </g>
+
+                    <g id="sombranaboca">
+                        <path fill="url(#Gradient1)" fill-opacity="0.4" d="
+                            M 95.9 70.5
+                            Q 128 53 160.6 70.5
+                            Q 128 123 96.5 71"/>
+                    </g>
+
+                    <g id="sombranatesta">
+                        <path stroke="black" stroke-width="1.5" stroke-opacity="0.1" stroke-linecap="round" fill="none" d="
+                            M 96.5 50
+                            C 94 25, 162 25, 159 50 "/>
+                    </g>
+
+                    <g id="sombrasnatesta">
+                        <path fill="black" fill-opacity="0.3" d="
+                            M 91 70
+                            Q 86 35 105 20
+                            L 108 22
+                            Q 90 35 91 70"/>
+                
+                        <path fill="black" fill-opacity="0.2" d="
+                            M 166 55
+                            Q 165 35 154 20
+                            L 145 22
+                            Q 162 35 166 55"/>
+                    </g>
+                </g>
+
+            //Ninja a mover-se na horizontal
+                <animateMotion dur="10s" repeatCount="indefinite"
+            path="M 50, 0 L 200 , 0 L 50, 0 z" />
+
+            </g>
+
+
+            // Objecto
+            <g id="acessoriodoninja" stroke="#000000" fill="url(#arma)" transform="translate(380,100) scale(0.7, 0.7)">
+                <path d="
+                    M 0 40 
+                    L 32 32 
+                    L 40 0 
+                    L 48 32 
+                    L 80 40 
+                    L 48 48 
+                    L 40 80 
+                    L 32 48 Z" />
+            </g>
+        </svg>
+    </body>
+</html>

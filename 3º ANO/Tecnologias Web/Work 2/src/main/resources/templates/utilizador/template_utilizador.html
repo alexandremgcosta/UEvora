@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Utilizador</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Running Events - Área do Utilizador</h1>
+    <nav>
+        <a th:href="@{/utilizador/}">Página Inicial</a>
+        <a th:href="@{/utilizador/criarInscricao}">Inscrever</a>
+        <a th:href="@{/logout}" th:text="Logout"></a>
+    </nav>
+</header>
+
+<section th:replace="${content}">
+
+</section>
+
+</body>
+</html>

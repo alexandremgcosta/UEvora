@@ -1,0 +1,91 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 07/11/2023, 14:54:39
+    Author     : alexandrecosta
+*/
+
+body    {
+    background-color: #98FB98;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 100%;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+#intro {
+    text-align: center;
+    margin: 2em 0 1em;
+    background-color: #3CB371;
+}
+#intro h1 {
+    margin-bottom: 0;
+}
+
+#content{
+    margin: 2em 2em;
+}
+
+#rodape{
+    color:#663333;
+    font-size: .8em;
+    text-align: center;
+}
+
+#nav {
+    background-color: #2E8B57;
+    overflow: hidden;
+    width: 100%;
+}
+#nav ul {
+    list-style:none;
+    padding: 0;
+    margin: 0 auto;
+    width: 28.5em;
+}
+#nav ul li {
+    font-weight: normal;
+    text-transform: uppercase;
+    float: left;
+}
+#nav ul li a {
+    display: block;
+    padding: .5em;
+    border: 1px solid white;
+    border-radius: .5em;
+    margin: .25em;
+}
+#nav ul a:link {
+    color: #fff;
+}
+#nav ul a:visited {
+    color: #fff;
+}
+#nav ul a:focus {
+    color: black;
+    border-color: black;
+}
+#nav ul a:hover {
+    color: black;
+    border-color: black;
+}
+#nav ul a:active {
+    color: black;
+}
+
+/* Div dos dados de obter uma farmácia */
+
+.divs_resultados{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    max-height: 600px;
+    overflow-y: auto;
+}

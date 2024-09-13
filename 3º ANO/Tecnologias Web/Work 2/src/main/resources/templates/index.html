@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home - Running Events</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<div th:replace="template :: header"></div>
+
+<section>
+
+    <h1>Bem-vindo aos Running Events!</h1>
+
+    <div class="eventos-content">
+
+        <div class="eventos-section">
+            <h2>Eventos a decorrer</h2>
+            <div th:each="evento, iterStat : ${eventosAtuais.content}">
+                <div>
+                    <h3 th:text="${evento.nome}">Nome do Evento</h3>
+                    <p th:text="${evento.descricao}">Descrição do Evento</p>
+
+                </div>
+            </div>
+            <div>
+                <a th:if="${eventosAtuais.hasPrevious()}"
+                   th:href="@{/(pageAtual=${eventosAtuais.number - 1})}">Anterior</a>
+                <a th:if="${eventosAtuais.hasNext()}" th:href="@{/(pageAtual=${eventosAtuais.number + 1})}">Próximo</a>
+            </div>
+        </div>
+
+
+        <div class="eventos-section">
+            <h2>Eventos Futuros</h2>
+            <div th:each="evento, iterStat : ${eventosFuturos.content}">
+                <div>
+                    <h3 th:text="${evento.nome}">Nome do Evento</h3>
+                    <p th:text="${evento.descricao}">Descrição do Evento</p>
+
+                </div>
+            </div>
+            <div>
+                <a th:if="${eventosFuturos.hasPrevious()}" th:href="@{/(pageFuturo=${eventosFuturos.number - 1})}">Anterior</a>
+                <a th:if="${eventosFuturos.hasNext()}"
+                   th:href="@{/(pageFuturo=${eventosFuturos.number + 1})}">Próximo</a>
+            </div>
+        </div>
+
+
+        <div class="eventos-section">
+            <h2>Eventos Passados</h2>
+            <div th:each="evento, iterStat : ${eventosPassados.content}">
+                <div>
+                    <h3 th:text="${evento.nome}">Nome do Evento</h3>
+                    <p th:text="${evento.descricao}">Descrição do Evento</p>
+
+                </div>
+            </div>
+            <div>
+                <a th:if="${eventosPassados.hasPrevious()}" th:href="@{/(pagePassado=${eventosPassados.number - 1})}">Anterior</a>
+                <a th:if="${eventosPassados.hasNext()}" th:href="@{/(pagePassado=${eventosPassados.number + 1})}">Próximo</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div th:replace="template :: footer"></div>
+</body>
+</html>

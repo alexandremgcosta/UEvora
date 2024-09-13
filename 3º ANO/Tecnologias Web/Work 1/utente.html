@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agendar Vacinação</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/farmacia-icon.png">
+    </head>
+
+    <body>
+
+        <div id="intro">
+
+            <h1><a href="index.html" target="_self"><img src="img/logo.png" alt="Agendar Vacinacao"></a></h1>
+
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html" target="_self">Início</a></li>
+                    <li><a href="utente.html" target="_self">Zona de Utente</a></li>
+                    <li><a href="gestao.html" target="_self">Área Reservada</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="content">
+
+            <h3>Meus Agendamentos</h3>
+            <label for="utenteID">Seu Identificador:</label>
+            <input type="text" id="utenteID">
+            <button onclick="listarAgendamentos()">Listar Agendamentos</button>
+            <button onclick="limparDiv('agendamentos')">Limpar dados</button>
+            <div class="divs_resultados" id="agendamentos"></div>
+
+        </div>
+
+        <div id="rodape">
+            
+            <p id="copyright">All content copyright &copy; Alexandre Costa nº 48039.</p>
+            <p>l48039@alunos.uevora.pt</p>
+            <p><a href="https://www.farmaciasportuguesas.pt/">Farmácias Portuguesas</a></p>
+
+        </div>
+
+        <script src="scripts/scriptsutentes.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

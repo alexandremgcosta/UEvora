@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inscrição - Running Events</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+
+<div th:replace="/utilizador/template_utilizador :: header"></div>
+
+<section>
+
+    <h1>Inscrição num novo evento:</h1>
+
+    <th:block th:if="${msg}">
+        <p th:text="${msg}"></p>
+    </th:block>
+
+    <form class="forms" action="criarInscricao" method="post">
+        <div style="margin: 5px;">
+            <label for="eventoId">Evento:</label>
+            <select id="eventoId" name="eventoId" required>
+
+                <option th:each="evento : ${eventos}"
+                        th:value="${evento.id}"
+                        th:text="${evento.nome}">Nome do Evento</option>
+            </select>
+        </div>
+        <div style="margin: 5px;">
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </div>
+        <div style="margin: 5px;">
+            <label for="escalao">Escalão:</label>
+            <select id="escalao" name="escalao" required>
+                <option value="junior">Júnior</option>
+                <option value="senior">Sénior</option>
+                <option value="vet35">Vet35</option>
+                <option value="vet50">Vet50</option>
+                <option value="vet65">Vet65</option>
+            </select>
+        </div>
+        <div style="margin: 5px;">
+            <button type="submit">Inscrever-se no Evento</button>
+        </div>
+    </form>
+
+</section>
+
+</body>
+</html>
